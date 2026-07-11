@@ -5,15 +5,14 @@
 }
 
 body {
-    font-family: 'Barlow', Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     background-color: #ffffff;
     position: relative;
     padding: 2rem;
-
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
 }
 
@@ -30,29 +29,258 @@ body::before {
     z-index: -1;
 }
 
+h1, h2, h3, nav ul li a, .destacado, .subtitulo, blockquote {
+    font-family: 'Barlow', sans-serif;
+}
 
-
-.contenedor {
+.contenedor, .contenedor-principal {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
 }
 
 header, nav, main, footer {
-    background: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1.5rem;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
     display: inline-block;
-    margin-right: 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: #333;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #630FD9;
+}
+
+.destacado {
+    font-style: italic;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-left: 3px solid #333;
+    background: #fdfdfd;
+}
+
+/* Estilos para index.html */
+.layout-3c {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.layout-3c .columna {
+    flex: 1;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.layout-dos-columnas {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.col-principal {
+    flex: 0 0 70%;
+}
+
+.col-lateral {
+    flex: 0 0 30%;
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.contenedor-foto {
+    margin: 1rem 0 1.5rem;
+}
+
+.contenedor-foto img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+/* Estilos para obras.html (galería) */
+
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.foto-galeria {
+    flex: 1 1 calc(33.33% - 1.5rem);
+    min-width: 180px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-galeria:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(99, 15, 217, 0.2);
+    cursor: pointer;
+}
+
+/* Estilos para ejercicio.html */
+#formularioObra {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 30px auto;
+}
+
+.mensaje-instruccion {
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: black;
+    margin: 0 auto 1.2rem;
+    padding: 0.8rem 1rem;
+    background: #f7f3ff;
+    border-left: 4px solid #630FD9;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.panel-control {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: min(700px, 100%);
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f4ff, #f3edff);
+    border: 1px solid #e3d7ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(99, 15, 217, 0.08);
+}
+
+.panel-control label {
+    font-weight: 700;
+    color: black;
+}
+
+.panel-control input {
+    min-width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.panel-control button {
+    margin: 0;
+}
+
+#formularioObra label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#formularioObra input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+#btnIngresar,
+#btnCalcular,
+#btnReiniciar,
+#btnCantidad {
+    width: 220px;
+    margin: auto;
+    background: #630FD9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+#btnIngresar:hover {
+    background: #4e09aa;
+}
+
+button:disabled {
+    background: #bdbdbd;
+    cursor: not-allowed;
+}
+
+#resultado {
+    width: 700px;
+    margin: 30px auto;
+    background: #fafafa;
+    border-left: 6px solid #630FD9;
+    border-radius: 6px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+#resultado p {
+    margin: 12px 0;
+}
+
+.layout-ejercicio h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.layout-ejercicio h3 {
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.titulo-ej {
+    text-align: center;
 }
